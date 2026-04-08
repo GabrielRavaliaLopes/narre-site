@@ -346,8 +346,10 @@
 
   /* FOOTER */
   footer {
+    margin: 0 auto;
     background: var(--dark); color: var(--cream);
-    padding: 3rem 5%; display: flex;
+    padding: 3rem 5%;
+    display: flex;
     align-items: center; justify-content: space-between;
     border-top: 1px solid rgba(240,237,227,0.08);
   }
@@ -360,6 +362,7 @@
   .footer-copy {
     font-size: 0.78rem; color: rgba(240,237,227,0.35);
     letter-spacing: 0.04em;
+    padding: 0rem 5%;
   }
 
   .footer-links { display: flex; gap: 1.5rem; }
