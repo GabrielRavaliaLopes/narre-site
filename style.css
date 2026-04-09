@@ -193,6 +193,19 @@
     text-transform: uppercase; letter-spacing: 0.06em;
   }
 
+  .hero-card,
+.stat-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+}
+
+/* efeito ao passar o mouse */
+.hero-card:hover,
+.stat-card:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
   /* MARQUEE */
   .marquee-wrap {
     overflow: hidden; background: var(--dark); padding: 1rem 0;
