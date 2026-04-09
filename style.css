@@ -53,6 +53,7 @@
   inset: 0;
   background: var(--dark);
   z-index: -1;
+  border-radius: 5px;
 
   transform: scaleX(0);
   transform-origin: center;
