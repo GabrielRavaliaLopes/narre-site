@@ -31,11 +31,12 @@
   display: flex; 
   gap: 2rem; 
   list-style: none;
+  margin-left: 125px;
 }
 
 .nav-links a {
   position: relative;
-  font-size: 0.85rem; 
+  font-size: 1rem; 
   font-weight: 400; 
   letter-spacing: 0.06em; 
   text-transform: uppercase; 
@@ -69,7 +70,7 @@
 .nav-links a:hover {
   color: var(--cream);
 }
-  /*
+  
   .nav-logo {
     font-family: 'DM Serif Display', serif;
     font-size: 1.6rem;
@@ -77,7 +78,7 @@
     letter-spacing: -0.02em;
   }
 
-  .nav-links { display: flex; gap: 2rem; list-style: none;}
+  /*.nav-links { display: flex; gap: 3rem; list-style: none;}
   .nav-links a {
     font-size: 0.85rem; font-weight: 400; letter-spacing: 0.06em; 
     text-transform: uppercase; color: var(--gray); text-decoration: none;
@@ -388,7 +389,8 @@
   .footer-copy {
     font-size: 0.78rem; color: rgba(240,237,227,0.35);
     letter-spacing: 0.04em;
-    padding: 0rem 5%;
+    padding: 0rem;
+    margin-left: 100px;
   }
 
   .footer-links { display: flex; gap: 1.5rem; }
