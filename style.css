@@ -22,16 +22,18 @@
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 5%;
+    gap: 1rem;
+    padding: 1rem 5%;
     background: rgba(240, 237, 227, 0.92);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(44,43,36,0.08);
   }
 .nav-links { 
   display: flex; 
-  gap: 2rem; 
+  gap: clamp(0.8rem, 2vw, 2rem); 
   list-style: none;
-  margin-left: 125px;
+  margin-left: auto;
+  margin-right: clamp(0.6rem, 2vw, 1.5rem);
 }
 
 .nav-links a {
@@ -139,6 +141,13 @@
     font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
     font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase;
     cursor: pointer; border-radius: 2px; transition: background 0.2s;
+  }
+  .hero-actions a { display: inline-flex; }
+
+  .btn-primary,
+  .btn-ghost,
+  .nav-cta {
+    white-space: nowrap;
   }
   .btn-primary:hover { background: var(--olive); }
 
@@ -390,7 +399,8 @@
     font-size: 0.78rem; color: rgba(240,237,227,0.35);
     letter-spacing: 0.04em;
     padding: 0rem;
-    margin-left: 100px;
+    margin-left: 0;
+    text-align: center;
   }
 
   .footer-links { display: flex; gap: 1.5rem; }
@@ -414,17 +424,99 @@
   .hero-actions { animation-delay: 0.55s; }
   .hero-visual { animation: fadeUp 0.7s 0.3s ease both; }
 
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; padding-top: 7rem; }
-    .hero-stats { display: none; }
-    .services-grid { grid-template-columns: 1fr 1fr; }
-    .steps { grid-template-columns: 1fr 1fr; }
+  /* TABLET */
+  @media (max-width: 1024px) {
+    nav { flex-wrap: wrap; justify-content: center; }
+    .nav-logo { width: 100%; text-align: center; }
+    .nav-links {
+      order: 2;
+      width: 100%;
+      margin: 0;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .nav-cta { order: 3; }
+    .hero {
+      grid-template-columns: 1fr;
+      padding-top: 10rem;
+      gap: 2.5rem;
+    }
+    .hero-sub { max-width: 100%; }
     .section-header { grid-template-columns: 1fr; gap: 1.5rem; }
-    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .steps { grid-template-columns: repeat(2, 1fr); }
+    .cta-title { font-size: clamp(2rem, 6vw, 3.2rem); }
+    footer {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem 2rem;
+      text-align: center;
+    }
   }
 
-  @media (max-width: 600px) {
-    .services-grid { grid-template-columns: 1fr; }
-    .steps { grid-template-columns: 1fr; }
+  /* CELULAR */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 0.9rem 1rem;
+      gap: 0.8rem;
+    }
+    .nav-logo { width: 100%; text-align: center; }
     nav .nav-links { display: none; }
+    nav > a { width: 100%; }
+    .nav-cta { width: 100%; }
+
+    .hero {
+      min-height: auto;
+      padding: 9.5rem 1rem 3.5rem;
+      gap: 1.8rem;
+    }
+    .hero h1 { font-size: clamp(2rem, 10vw, 3rem); }
+    .hero-sub { font-size: 0.96rem; line-height: 1.6; }
+    .hero-card { padding: 1.4rem; }
+    .hero-stats {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+    .stat-card { padding: 1rem; }
+    .hero-card:hover,
+    .stat-card:hover { transform: none; box-shadow: none; }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .hero-actions a,
+    .hero-actions button {
+      width: 100%;
+    }
+    .btn-primary,
+    .btn-ghost {
+      width: 100%;
+      padding: 0.9rem 1.1rem;
+    }
+
+    .section,
+    .how-section,
+    .cta-section { padding: 4rem 1rem; }
+    .services-grid,
+    .steps { grid-template-columns: 1fr; }
+    .service-card { padding: 1.5rem; }
+
+    .marquee-track { gap: 1.4rem; }
+    .marquee-item { font-size: 0.72rem; }
+    footer { padding: 2rem 1rem; }
+  }
+
+  /* WINDOWS / DESKTOP GRANDES */
+  @media (min-width: 1280px) {
+    .hero,
+    .section,
+    .how-section,
+    .cta-section,
+    footer {
+      padding-left: 8%;
+      padding-right: 8%;
+    }
   }
