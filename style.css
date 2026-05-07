@@ -317,6 +317,7 @@
     gap: 3rem;
     border-top: 1px solid rgba(240,237,227,0.12);
     padding-top: 3rem;
+    cursor: pointer;
   }
 
   .step-num {
